@@ -6,10 +6,13 @@ serverSocket.listen(5)
 
 while 1:
 	clientSocket, (remoteHost, remotePort) = serverSocket.accept()
-	loginMessage = clientsocket.recv(100)
+	print 'Remote Socket is' + str(remoteHost) + ':' + str(remotePort)
+	loginMessage = clientSocket.recv(100)
 	username = loginMessage.split(' ')[0]
 	password = loginMessage.split(' ')[1]
-	if username =='Samuel' and password == '897375' :
+	print username;
+	print password;
+	if username =='Samuel' and password == '19920202':
 		clientSocket.send('OK')
 	else:
 		clientSocket.send('FormatError or Auth failed')
